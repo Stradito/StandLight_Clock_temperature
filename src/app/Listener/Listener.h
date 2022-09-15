@@ -14,7 +14,7 @@ private :
     Controller *controller;
 
 public:
-    Listener(Button *button1, Button *button2, Controller *control, ClockCheck *clock);
+    Listener(Button *powerButton, Button *modeButton, Controller *control, ClockCheck *clock);
     ~Listener();
     void checkEvent();
 };

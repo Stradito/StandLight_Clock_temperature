@@ -1,9 +1,9 @@
 #include "Listener.h"
 
-Listener::Listener(Button *button1, Button *button2, Controller *control, ClockCheck *clock)
+Listener::Listener(Button *powerButton, Button *modeButton, Controller *control, ClockCheck *clock)
 {
-    powerButton = button1;
-    modeButton = button2;
+    this->powerButton = powerButton;
+    this->modeButton = modeButton;
     controller = control;
     clockCheck = clock;
 }
