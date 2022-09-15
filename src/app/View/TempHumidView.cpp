@@ -12,7 +12,7 @@ TempHumidView::~TempHumidView()
 void TempHumidView::setTempHumidData(float temp, float humid)
 {
     char buff[30];
-    if (temp >= 32) {
+    if (temp >= 31) {
         sprintf(buff, "Warning");
         lcd->WriteStringXY(0, 10, buff);
         sprintf(buff, "%.1f%%", humid);

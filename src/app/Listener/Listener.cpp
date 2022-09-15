@@ -29,7 +29,7 @@ void Listener::checkEvent()
         if (!dhtData.error)
         {
             controller->updateTempHumid(dhtData);
-            if (dhtData.Temp >= 32)
+            if (dhtData.Temp >= 31)
             {
                 controller->updateEvent("overTemp");
             }
