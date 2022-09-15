@@ -2,60 +2,75 @@
 
 Service::Service(View *viewer)
 {
-    view = viewer;;
+    view = viewer;
     lightState = LIGHT_OFF;
 }
 
 Service::~Service()
 {
+
 }
 
-void Service::updateState(std::string strBtn)
+void Service::updateState(std::string strState)
 {
     switch (lightState)
     {
-    case LIGHT_OFF:
-        if (strBtn == "modeButton") {
-            lightState = LIGHT_1;
-            view->setState(lightState);
-        }
+        case LIGHT_OFF:
+            if (strState == "powerButton") {
+                lightState = LIGHT_1;
+                view->setState(lightState);
+            }
         break;
 
         case LIGHT_1:
-        if (strBtn == "modeButton") {
-            lightState = LIGHT_2;
-            view->setState(lightState);
-        }
+            if (strState == "modeButton") {
+                lightState = LIGHT_2;
+                view->setState(lightState);
+            }
+            else if (strState == "powerButton") {
+                lightState = LIGHT_OFF;
+                view->setState(lightState);
+            }
         break;
-
         case LIGHT_2:
-        if (strBtn == "modeButton") {
-            lightState = LIGHT_3;
-            view->setState(lightState);
-        }
+            if (strState == "modeButton") {
+                lightState = LIGHT_3;
+                view->setState(lightState);
+            }
+            else if (strState == "powerButton") {
+                lightState = LIGHT_OFF;
+                view->setState(lightState);
+            }
         break;
-
         case LIGHT_3:
-        if (strBtn == "modeButton") {
-            lightState = LIGHT_4;
-            view->setState(lightState);
-        }
+            if (strState == "modeButton") {
+                lightState = LIGHT_4;
+                view->setState(lightState);
+            }
+            else if (strState == "powerButton") {
+                lightState = LIGHT_OFF;
+                view->setState(lightState);
+            }
         break;
-
         case LIGHT_4:
-        if (strBtn == "modeButton") {
-            lightState = LIGHT_5;
-            view->setState(lightState);
-        }
+            if (strState == "modeButton") {
+                lightState = LIGHT_5;
+                view->setState(lightState);
+            }
+            else if (strState == "powerButton") {
+                lightState = LIGHT_OFF;
+                view->setState(lightState);
+            }
         break;
-    
-    case LIGHT_5:
-        if (strBtn == "StateOff") {
-            lightState = LIGHT_OFF;
-            view->setState(lightState);
-        }
+        case LIGHT_5:
+            if (strState == "modeButton") {
+                lightState = LIGHT_1;
+                view->setState(lightState);
+            }
+            else if (strState == "powerButton") {
+                lightState = LIGHT_OFF;
+                view->setState(lightState);
+            }
         break;
     }
-
 }
-

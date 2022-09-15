@@ -3,17 +3,17 @@
 
 #include <string>
 #include "Service.h"
-
-#include "LightState.h"
+#include "ClockService.h"
 
 class Controller
 {
 private:
     int lightState;
-    Service *servicer;
+    Service *service;
+    ClockService *clockService;
 
 public:
-    Controller(Service *service);
+    Controller(Service *serv, ClockService *clockServ);
     virtual ~Controller();
     void updateEvent(std::string strBtn);
 };

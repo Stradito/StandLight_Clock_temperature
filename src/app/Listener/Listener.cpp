@@ -1,9 +1,11 @@
 #include "Listener.h"
 
-Listener::Listener(Button *button, Controller *control)
+Listener::Listener(Button *button1, Button *button2, Controller *control, ClockCheck *clock)
 {
-    powerButton = button;
+    powerButton = button1;
+    modeButton = button2;
     controller = control;
+    clockCheck = clock;
 }
 
 Listener::~Listener()
@@ -12,13 +14,18 @@ Listener::~Listener()
 
 void Listener::checkEvent()
 {
+    if (modeButton->getState() == RELEASE_ACTIVE)
+    {
+        controller->updateEvent("modeButton");
+    }
+
     if (powerButton->getState() == RELEASE_ACTIVE)
     {
         controller->updateEvent("powerButton");
     }
 
-    if (timeClock->isUpdate())
+    if (clockCheck->isUpdate())
     {
-        controller->updateEvent("clockUdate");
+        controller->updateEvent("clockUpdate");
     }
 }

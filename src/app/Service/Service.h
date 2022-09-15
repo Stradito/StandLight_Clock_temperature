@@ -1,14 +1,15 @@
-#ifndef SERVICE_H
-#define SERVICE_H
+#ifndef __SERVICE_H__
+#define __SERVICE_H__
 
 #include <string>
 #include "View.h"
+#include "LightState.h"
 
 class Service
 {
 private:
     int lightState;
-    View * view;
+    View *view;
 
 public:
     Service(View *viewer);
@@ -16,4 +17,4 @@ public:
     void updateState(std::string strState);
 };
 
-#endif
+#endif /* __SERVICE_H__ */
