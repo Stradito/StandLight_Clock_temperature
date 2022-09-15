@@ -27,7 +27,7 @@ void Service::updateState(std::string strState)
                 lightState = LIGHT_2;
                 view->setState(lightState);
             }
-            else if (strState == "powerButton") {
+            else if (strState == "powerButton" || strState == "overTemp") {
                 lightState = LIGHT_OFF;
                 view->setState(lightState);
             }
@@ -37,7 +37,7 @@ void Service::updateState(std::string strState)
                 lightState = LIGHT_3;
                 view->setState(lightState);
             }
-            else if (strState == "powerButton") {
+            else if (strState == "powerButton" || strState == "overTemp") {
                 lightState = LIGHT_OFF;
                 view->setState(lightState);
             }
@@ -47,7 +47,7 @@ void Service::updateState(std::string strState)
                 lightState = LIGHT_4;
                 view->setState(lightState);
             }
-            else if (strState == "powerButton") {
+            else if (strState == "powerButton" || strState == "overTemp") {
                 lightState = LIGHT_OFF;
                 view->setState(lightState);
             }
@@ -57,7 +57,7 @@ void Service::updateState(std::string strState)
                 lightState = LIGHT_5;
                 view->setState(lightState);
             }
-            else if (strState == "powerButton") {
+            else if (strState == "powerButton" || strState == "overTemp") {
                 lightState = LIGHT_OFF;
                 view->setState(lightState);
             }
@@ -67,7 +67,7 @@ void Service::updateState(std::string strState)
                 lightState = LIGHT_1;
                 view->setState(lightState);
             }
-            else if (strState == "powerButton") {
+            else if (strState == "powerButton" || strState == "overTemp") {
                 lightState = LIGHT_OFF;
                 view->setState(lightState);
             }
